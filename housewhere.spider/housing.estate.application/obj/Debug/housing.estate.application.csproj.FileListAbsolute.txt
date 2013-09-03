@@ -1,0 +1,10 @@
+F:\projects\houseatlas\housing.estate.application\bin\Debug\housing.estate.application.exe.config
+F:\projects\houseatlas\housing.estate.application\bin\Debug\housing.estate.application.exe
+F:\projects\houseatlas\housing.estate.application\bin\Debug\housing.estate.application.pdb
+F:\projects\houseatlas\housing.estate.application\bin\Debug\housing.estate.spider.dll
+F:\projects\houseatlas\housing.estate.application\bin\Debug\X3.Spider.dll
+F:\projects\houseatlas\housing.estate.application\bin\Debug\housing.estate.spider.pdb
+F:\projects\houseatlas\housing.estate.application\bin\Debug\X3.Spider.pdb
+F:\projects\houseatlas\housing.estate.application\obj\Debug\housing.estate.application.csprojResolveAssemblyReference.cache
+F:\projects\houseatlas\housing.estate.application\obj\Debug\housing.estate.application.exe
+F:\projects\houseatlas\housing.estate.application\obj\Debug\housing.estate.application.pdb

@@ -1,0 +1,61 @@
+<html>
+<head>
+<script src="http://api.map.baidu.com/api?v=1.4" type="text/javascript"></script>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+  function iterateEstates(callback){
+	var file = "rough_data\\estates.txt";
+      $.ajax({
+                type: 'GET',
+                url: file,
+                cache: false,
+                dataType: 'text',
+                async: false,
+                contentType: "application/x-www-form-urlencoded;charset=utf-8",
+                error: function(){
+                    alert('error happens when load rate file');
+                },
+                success: function(text){
+					var estateLines = text.split("\r\n");
+					alert($(estateLines).length);
+					$(estateLines).each(function(){
+						callback(this);
+					});
+				}
+			});
+  }
+  
+  function addPoint(estate, point){
+	var lng = null == point ? 0 : point.lng;
+	var lat = null == point ? 0 : point.lat;
+	var $estate = $("<p>" + estate[0] + "," + estate[1] + "," + estate[2] + "," + lng + "," + lat + "</p>");
+	$('#estates').append($estate);
+  }
+  
+  function fillLongLat(){
+	  var myGeo = new BMap.Geocoder();
+	  iterateEstates(function(line){
+		var items = line.split(",");
+		var callback = (function(itms){
+		  return function(point){			
+				addPoint(itms, point);
+		  }
+		})(items);
+
+		myGeo.getPoint(items[0], callback, "±±¾©ÊÐ");
+	  });
+  }
+  
+  $(function(){
+	fillLongLat();
+  });
+  
+  
+</script>
+</head>
+<body>
+<div id="estates">
+
+</div>
+</body>
+</html>

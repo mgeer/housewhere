@@ -1,0 +1,14 @@
+F:\projects\houseatlas\housing.estate.spider\bin\Release\housing.estate.spider.dll
+F:\projects\houseatlas\housing.estate.spider\bin\Release\housing.estate.spider.pdb
+F:\projects\houseatlas\housing.estate.spider\bin\Release\X3.Spider.dll
+F:\projects\houseatlas\housing.estate.spider\bin\Release\X3.Spider.pdb
+F:\projects\houseatlas\housing.estate.spider\obj\Release\housing.estate.spider.csprojResolveAssemblyReference.cache
+F:\projects\houseatlas\housing.estate.spider\obj\Release\housing.estate.spider.dll
+F:\projects\houseatlas\housing.estate.spider\obj\Release\housing.estate.spider.pdb
+D:\android\housewhere.spider\housing.estate.spider\bin\Release\housing.estate.spider.dll
+D:\android\housewhere.spider\housing.estate.spider\bin\Release\housing.estate.spider.pdb
+D:\android\housewhere.spider\housing.estate.spider\bin\Release\X3.Spider.dll
+D:\android\housewhere.spider\housing.estate.spider\bin\Release\X3.Spider.pdb
+D:\android\housewhere.spider\housing.estate.spider\obj\Release\housing.estate.spider.csprojResolveAssemblyReference.cache
+D:\android\housewhere.spider\housing.estate.spider\obj\Release\housing.estate.spider.dll
+D:\android\housewhere.spider\housing.estate.spider\obj\Release\housing.estate.spider.pdb
