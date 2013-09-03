@@ -9,5 +9,10 @@
             android:layout_height="wrap_content"
             android:text="Hello World, MyActivity"
             />
+    <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="212dp" android:layout_marginLeft="0dp"
+            android:layout_gravity="left|center_vertical">
+    </FrameLayout>
 </LinearLayout>
 
