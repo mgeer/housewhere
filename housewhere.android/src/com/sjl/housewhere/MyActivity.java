@@ -2,15 +2,10 @@ package com.sjl.housewhere;
 
 
 import android.app.Activity;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.sjl.housewhere.database.AssetsDatabaseManager;
 import com.sjl.housewhere.model.Estate;
 import com.sjl.housewhere.model.EstateRepository;
 

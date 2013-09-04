@@ -23,17 +23,21 @@ public class EstateRepository {
         Log.i("db", "trying to access rows in db!");
         ArrayList<Estate> estates = new ArrayList<Estate>();
         while (cursor.moveToNext()) {
-            String name = cursor.getString(cursor.getColumnIndex("name"));
-            double price = cursor.getDouble(cursor.getColumnIndex("price"));
-            int area = cursor.getInt(cursor.getColumnIndex("area"));
-            double longitude = cursor.getDouble(cursor.getColumnIndex("longitude"));
-            double latitude = cursor.getDouble(cursor.getColumnIndex("latitude"));
-            Estate estate = new Estate(name, price, area, longitude, latitude);
+            Estate estate = createEstate(cursor);
             estates.add(estate);
             Log.i("db", estate.toString());
         }
         database.close();
         return estates;
+    }
+
+    private Estate createEstate(Cursor cursor) {
+        String name = cursor.getString(cursor.getColumnIndex("name"));
+        double price = cursor.getDouble(cursor.getColumnIndex("price"));
+        int area = cursor.getInt(cursor.getColumnIndex("area"));
+        double longitude = cursor.getDouble(cursor.getColumnIndex("longitude"));
+        double latitude = cursor.getDouble(cursor.getColumnIndex("latitude"));
+        return new Estate(name, price, area, longitude, latitude);
     }
 
     private SQLiteDatabase openDatabase() {
