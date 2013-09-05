@@ -23,7 +23,7 @@ public class MyActivity extends Activity {
     }
 
     private void spikeDatabase() {
-        EstateRepository estateRepository = new EstateRepository(getApplication());
+        EstateRepository estateRepository = new EstateRepository(this);
         LinearLayout linearLayout = (LinearLayout)findViewById(R.id.main_panel);
         List<Estate> fiveEstates = estateRepository.getFiveEstates();
         for (Estate estate : fiveEstates){

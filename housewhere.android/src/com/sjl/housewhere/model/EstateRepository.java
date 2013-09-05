@@ -1,6 +1,6 @@
 package com.sjl.housewhere.model;
 
-import android.app.Application;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
@@ -12,13 +12,13 @@ import java.util.List;
 public class EstateRepository {
     private final AssetsDatabaseManager assetsDatabaseManager;
 
-    public EstateRepository(Application application) {
+    public EstateRepository(Context application) {
         AssetsDatabaseManager.initManager(application);
         assetsDatabaseManager = AssetsDatabaseManager.getManager();
     }
 
     public List<Estate> getFiveEstates() {
-        SQLiteDatabase database = openDatabase();
+        SQLiteDatabase database = getDatabase();
         Cursor cursor = database.rawQuery("SELECT * FROM estates LIMIT 5", new String[0]);
         Log.i("db", "trying to access rows in db!");
         ArrayList<Estate> estates = new ArrayList<Estate>();
@@ -27,7 +27,6 @@ public class EstateRepository {
             estates.add(estate);
             Log.i("db", estate.toString());
         }
-        database.close();
         return estates;
     }
 
@@ -40,7 +39,7 @@ public class EstateRepository {
         return new Estate(name, price, area, longitude, latitude);
     }
 
-    private SQLiteDatabase openDatabase() {
+    private SQLiteDatabase getDatabase() {
         return assetsDatabaseManager.getDatabase("estates.db");
     }
 }

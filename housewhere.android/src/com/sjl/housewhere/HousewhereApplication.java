@@ -6,15 +6,21 @@ import android.widget.Toast;
 import com.baidu.mapapi.BMapManager;
 import com.baidu.mapapi.MKGeneralListener;
 import com.baidu.mapapi.map.MKEvent;
+import com.sjl.housewhere.database.AssetsDatabaseManager;
 
 public class HousewhereApplication extends Application {
 
     BMapManager mBMapManager = null;
-    private String strKey = "0De30d2ecd212da334f228d1c302ea5d ";
+    private String strKey = "0De30d2ecd212da334f228d1c302ea5d";
+
+    public HousewhereApplication() {
+        System.out.println(HousewhereApplication.class + "constructed!");
+    }
 
     @Override
     public void onCreate() {
         super.onCreate();    //To change body of overridden methods use File | Settings | File Templates.
+
         initEngineManager(this);
     }
 
