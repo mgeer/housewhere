@@ -11,23 +11,18 @@ import java.util.List;
 
 public class EstateRepository {
     private final AssetsDatabaseManager assetsDatabaseManager;
+    private String databaseFile = "estates.db";
+
+
+
+    public EstateRepository(Context application, String databaseFile) {
+        this(application);
+        this.databaseFile = databaseFile;
+    }
 
     public EstateRepository(Context application) {
         AssetsDatabaseManager.initManager(application);
         assetsDatabaseManager = AssetsDatabaseManager.getManager();
-    }
-
-    public List<Estate> getFiveEstates() {
-        SQLiteDatabase database = getDatabase();
-        Cursor cursor = database.rawQuery("SELECT * FROM estates LIMIT 5", new String[0]);
-        Log.i("db", "trying to access rows in db!");
-        ArrayList<Estate> estates = new ArrayList<Estate>();
-        while (cursor.moveToNext()) {
-            Estate estate = createEstate(cursor);
-            estates.add(estate);
-            Log.i("db", estate.toString());
-        }
-        return estates;
     }
 
     private Estate createEstate(Cursor cursor) {
@@ -40,6 +35,22 @@ public class EstateRepository {
     }
 
     private SQLiteDatabase getDatabase() {
-        return assetsDatabaseManager.getDatabase("estates.db");
+        return assetsDatabaseManager.getDatabase(databaseFile);
+    }
+
+    public List<Estate> getEstatesByLongLatScope(double maxLong, double minLong, double maxLat, double minLat) {
+        ArrayList<Estate> estates = new ArrayList<Estate>();
+        SQLiteDatabase database = getDatabase();
+        Cursor cursor = database.rawQuery(
+                "SELECT * FROM estates where longitude <= ? AND longitude >= ? AND latitude <= ? AND latitude >= ?",
+                new String[]{
+                        Double.toString(maxLong), Double.toString(minLong),
+                        Double.toString(maxLat), Double.toString(minLat),
+                });
+        while (cursor.moveToNext()){
+            Estate estate = createEstate(cursor);
+            estates.add(estate);
+        }
+        return estates;
     }
 }

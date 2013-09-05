@@ -32,6 +32,12 @@ public class EstatesInDBTest {
     }
 
     @Test
+    public void testCreateEmptyDatabase() throws Exception {
+        EstatesInDB estatesInDB = new EstatesInDB("empty_estates.db");
+        estatesInDB.create("test\\fixture\\empty_estates.txt");
+    }
+
+    @Test
     public void testDropThenInsertIfDBExists() throws SQLException, ClassNotFoundException {
         EstatesInDB estatesInDB = new EstatesInDB(testDBLocation);
         estatesInDB.create("test\\fixture\\estates.txt");
@@ -48,10 +54,9 @@ public class EstatesInDBTest {
         Statement statement = connection.createStatement();
         ResultSet rs = statement.executeQuery("SELECT * FROM estates;");
         int resultLength = 0;
-        while (rs.next()){
-//            Assert.assertEquals(estates[resultLength][0], rs.getString("name"));
-            Assert.assertEquals(String.format("%s.0", estates[resultLength][1]), rs.getString("price"));
 
+        while (rs.next()){
+            Assert.assertEquals(String.format("%s.0", estates[resultLength][1]), rs.getString("price"));
             resultLength ++;
         }
         Assert.assertEquals(estates.length, resultLength);

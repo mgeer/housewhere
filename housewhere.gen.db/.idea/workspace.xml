@@ -6,11 +6,18 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/Main.java" changelist="2cfba10c-ff16-401d-b226-ebbc9c022ce3" time="1378208849370" ignored="false" />
     <file path="/SqlLiteSpikeTest.java" changelist="2cfba10c-ff16-401d-b226-ebbc9c022ce3" time="1378187624049" ignored="false" />
-    <file path="/fragment.java" changelist="2cfba10c-ff16-401d-b226-ebbc9c022ce3" time="1378207480264" ignored="false" />
-    <file path="/Dummy.txt" changelist="2cfba10c-ff16-401d-b226-ebbc9c022ce3" time="1378207392062" ignored="false" />
-    <file path="/EstatesInDBTest.java" changelist="2cfba10c-ff16-401d-b226-ebbc9c022ce3" time="1378206704745" ignored="false" />
+    <file path="/fragment.java" changelist="2cfba10c-ff16-401d-b226-ebbc9c022ce3" time="1378382902188" ignored="false" />
+    <file path="/Dummy.txt" changelist="2cfba10c-ff16-401d-b226-ebbc9c022ce3" time="1378382902188" ignored="false" />
+    <file path="/EstatesInDBTest.java" changelist="2cfba10c-ff16-401d-b226-ebbc9c022ce3" time="1378382458607" ignored="false" />
     <file path="/EstatesInDB.java" changelist="2cfba10c-ff16-401d-b226-ebbc9c022ce3" time="1378209136525" ignored="false" />
     <file path="/*.regexp" changelist="2cfba10c-ff16-401d-b226-ebbc9c022ce3" time="1378194881230" ignored="false" />
+    <file path="$PROJECT_DIR$/../housewhere.android/test/src/com/sjl/housewhere/MyActivityTest.java" changelist="2cfba10c-ff16-401d-b226-ebbc9c022ce3" time="1378384096370" ignored="false" />
+    <file path="$PROJECT_DIR$/../housewhere.android/src/com/sjl/housewhere/model/EstateRepository.java" changelist="2cfba10c-ff16-401d-b226-ebbc9c022ce3" time="1378387376292" ignored="false" />
+    <file path="/EstateRepository.java" changelist="2cfba10c-ff16-401d-b226-ebbc9c022ce3" time="1378387368913" ignored="false" />
+    <file path="$PROJECT_DIR$/../housewhere.android/test/src/com/sjl/housewhere/Spike.java" changelist="2cfba10c-ff16-401d-b226-ebbc9c022ce3" time="1378382854106" ignored="false" />
+    <file path="$PROJECT_DIR$/../housewhere.android/test/src/com/sjl/housewhere/EstateRepositoryTest.java" changelist="2cfba10c-ff16-401d-b226-ebbc9c022ce3" time="1378387647038" ignored="false" />
+    <file path="/EstateRepositoryTest.java" changelist="2cfba10c-ff16-401d-b226-ebbc9c022ce3" time="1378387486381" ignored="false" />
+    <file path="$PROJECT_DIR$/../housewhere.android/src/com/sjl/housewhere/MyActivity.java" changelist="2cfba10c-ff16-401d-b226-ebbc9c022ce3" time="1378384128057" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,23 +33,7 @@
   </component>
   <component name="DebuggerManager">
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/test/com/sjl/estatesinsqllite/EstatesInDBTest.java" line="51" class="com.sjl.estatesinsqllite.EstatesInDBTest" package="com.sjl.estatesinsqllite">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -88,10 +79,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/sjl/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="20" selection-start="515" selection-end="515" vertical-scroll-proportion="0.4964539">
+            <state line="14" column="20" selection-start="515" selection-end="515" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EstatesInDBTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/com/sjl/estatesinsqllite/EstatesInDBTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="23" selection-start="1641" selection-end="1641" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="empty_estates.txt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/fixture/empty_estates.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -130,13 +141,13 @@
       </file>
       <file leaf-file-name="estates.txt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/fixture/estates.txt">
-          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state line="1" column="0" selection-start="41" selection-end="202" vertical-scroll-proportion="0.0">
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+            <state />
           </provider>
         </entry>
       </file>
@@ -167,10 +178,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EstatesInDB.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="EstatesInDB.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/sjl/estatesinsqllite/EstatesInDB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="107" selection-start="2177" selection-end="2177" vertical-scroll-proportion="0.0">
+            <state line="44" column="45" selection-start="1550" selection-end="1869" vertical-scroll-proportion="0.7773655">
               <folding />
             </state>
           </provider>
@@ -189,16 +200,16 @@
         <option value="$PROJECT_DIR$/test/SqlLiteSpikeTest.java" />
         <option value="$PROJECT_DIR$/test/fixture/estates.txt" />
         <option value="$PROJECT_DIR$/test/fixture/empty_estates.txt" />
-        <option value="$PROJECT_DIR$/test/com/sjl/estatesinsqllite/EstatesInDBTest.java" />
         <option value="$PROJECT_DIR$/src/com/sjl/Main.java" />
         <option value="$PROJECT_DIR$/src/com/sjl/estatesinsqllite/EstatesInDB.java" />
+        <option value="$PROJECT_DIR$/test/com/sjl/estatesinsqllite/EstatesInDBTest.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1696" />
+    <option name="width" value="1692" />
     <option name="height" value="1026" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -227,6 +238,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -247,6 +259,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="housewhere.gen.db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="housewhere.gen.db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="housewhere.gen.db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -282,9 +308,30 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="housewhere.gen.db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="housewhere.gen.db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sjl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="estatesinsqllite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -292,11 +339,11 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="recentsLimit" value="5" />
-    <property name="MemberChooser.sorted" value="false" />
     <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../housewhere.android" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
     <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="housewhere.gen.db" />
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -312,8 +359,8 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
-    <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -331,7 +378,7 @@
       <recent name="com.sjl.estatesinsqllite" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.EstatesInDBTest">
+  <component name="RunManager" selected="JUnit.EstatesInDBTest.testCreateEmptyDatabase">
     <configuration default="false" name="EstatesInDBTest.testCreateDBEstates" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -434,7 +481,7 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="EstatesInDBTest.testExitIfGivenDBExists" type="JUnit" factoryName="JUnit" temporary="true">
+    <configuration default="false" name="EstatesInDBTest.testDropThenInsertIfDBExists" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.sjl.estatesinsqllite.*" />
@@ -446,7 +493,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.sjl.estatesinsqllite" />
       <option name="MAIN_CLASS_NAME" value="com.sjl.estatesinsqllite.EstatesInDBTest" />
-      <option name="METHOD_NAME" value="testExitIfGivenDBExists" />
+      <option name="METHOD_NAME" value="testDropThenInsertIfDBExists" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -462,7 +509,7 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="EstatesInDBTest.testDropThenInsertIfDBExists" type="JUnit" factoryName="JUnit" temporary="true">
+    <configuration default="false" name="EstatesInDBTest.testCreateEmptyDatabase" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.sjl.estatesinsqllite.*" />
@@ -474,7 +521,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.sjl.estatesinsqllite" />
       <option name="MAIN_CLASS_NAME" value="com.sjl.estatesinsqllite.EstatesInDBTest" />
-      <option name="METHOD_NAME" value="testDropThenInsertIfDBExists" />
+      <option name="METHOD_NAME" value="testCreateEmptyDatabase" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -544,20 +591,20 @@
       <method />
     </configuration>
     <list size="6">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.EstatesInDBTest.testCreateDBEstates" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.EstatesInDBTest.testImportEstatesInGivenFile" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.EstatesInDBTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.EstatesInDBTest.testExitIfGivenDBExists" />
+      <item index="0" class="java.lang.String" itemvalue="Application.estates.gen.db" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.EstatesInDBTest.testCreateDBEstates" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.EstatesInDBTest.testImportEstatesInGivenFile" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.EstatesInDBTest" />
       <item index="4" class="java.lang.String" itemvalue="JUnit.EstatesInDBTest.testDropThenInsertIfDBExists" />
-      <item index="5" class="java.lang.String" itemvalue="Application.estates.gen.db" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.EstatesInDBTest.testCreateEmptyDatabase" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.EstatesInDBTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.EstatesInDBTest.testCreateEmptyDatabase" />
         <item index="1" class="java.lang.String" itemvalue="JUnit.EstatesInDBTest.testDropThenInsertIfDBExists" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.EstatesInDBTest.testImportEstatesInGivenFile" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.EstatesInDBTest.testCreateDBEstates" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.EstatesInDBTest.testExitIfGivenDBExists" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.EstatesInDBTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.EstatesInDBTest.testImportEstatesInGivenFile" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.EstatesInDBTest.testCreateDBEstates" />
       </list>
     </recent_temporary>
   </component>
@@ -571,13 +618,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="-8" y="-8" width="1692" height="1026" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.233526" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -593,10 +639,11 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12944785" sideWeight="0.68670523" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3132948" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12915128" sideWeight="0.68670523" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3132948" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.233526" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -666,6 +713,13 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/sjl/estatesinsqllite/EstatesInDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="107" selection-start="2177" selection-end="2177" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://C:/Program Files (x86)/Java/jdk1.6.0_13/src.zip!/java/lang/Class.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="135" column="7" selection-start="4958" selection-end="4958" vertical-scroll-proportion="0.0">
@@ -685,16 +739,12 @@
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/runner/JUnitCore.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="35" selection-start="1395" selection-end="1395" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="31" column="35" selection-start="1395" selection-end="1395" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/sqlite-jdbc-3.6.20.1.jar!/org/sqlite/DB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="373" column="0" selection-start="12502" selection-end="12502" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="373" column="0" selection-start="12502" selection-end="12502" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
@@ -739,23 +789,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/fixture/estates.txt">
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="0" selection-start="41" selection-end="202" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/fixture/empty_estates.txt">
       <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/sqlite-jdbc-3.6.20.1.jar!/org/sqlite/Stmt.java">
@@ -765,23 +805,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sjl/estatesinsqllite/EstatesInDB.java">
+    <entry file="file://$PROJECT_DIR$/src/com/sjl/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="107" selection-start="2177" selection-end="2177" vertical-scroll-proportion="0.0">
+        <state line="14" column="20" selection-start="515" selection-end="515" vertical-scroll-proportion="0.0">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/fixture/empty_estates.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/com/sjl/estatesinsqllite/EstatesInDBTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="20" selection-start="110" selection-end="110" vertical-scroll-proportion="0.17730497">
-          <folding />
+        <state line="42" column="23" selection-start="1641" selection-end="1641" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sjl/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/sjl/estatesinsqllite/EstatesInDB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="20" selection-start="515" selection-end="515" vertical-scroll-proportion="0.4964539">
+        <state line="44" column="45" selection-start="1550" selection-end="1869" vertical-scroll-proportion="0.7773655">
           <folding />
         </state>
       </provider>

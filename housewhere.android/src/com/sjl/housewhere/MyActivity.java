@@ -19,20 +19,5 @@ public class MyActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        spikeDatabase();
     }
-
-    private void spikeDatabase() {
-        EstateRepository estateRepository = new EstateRepository(this);
-        LinearLayout linearLayout = (LinearLayout)findViewById(R.id.main_panel);
-        List<Estate> fiveEstates = estateRepository.getFiveEstates();
-        for (Estate estate : fiveEstates){
-            TextView textView = new TextView(this);
-            textView.setText(estate.toString());
-            textView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT));
-            linearLayout.addView(textView);
-        }
-    }
-
 }

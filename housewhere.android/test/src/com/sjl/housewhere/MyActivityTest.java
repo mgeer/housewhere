@@ -2,7 +2,6 @@ package com.sjl.housewhere;
 
 import android.app.Application;
 import android.test.ActivityInstrumentationTestCase2;
-import android.test.ApplicationTestCase;
 import com.sjl.housewhere.model.Estate;
 import com.sjl.housewhere.model.EstateRepository;
 import junit.framework.Assert;
@@ -25,11 +24,5 @@ public class MyActivityTest extends ActivityInstrumentationTestCase2<MyActivity>
         super("com.sjl.housewhere", MyActivity.class);
     }
 
-    public void testEstateRepository() throws Exception {
-        Application application = this.getActivity().getApplication();
-        EstateRepository estateRepository = new EstateRepository(application);
-        List<Estate> fiveEstates = estateRepository.getFiveEstates();
-        Assert.assertEquals(5, fiveEstates.size());
-    }
 }
 
