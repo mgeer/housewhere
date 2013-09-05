@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E63CC499-A8E6-4830-AB6F-8F65458682FD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>spider_test</RootNamespace>
+    <AssemblyName>spider.test</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Moq">
+      <HintPath>..\..\libs\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="Norm">
+      <HintPath>..\..\libs\Norm.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="xunit">
+      <HintPath>..\..\libs\xunit.dll</HintPath>
+    </Reference>
+    <Reference Include="xunit.extensions">
+      <HintPath>..\..\libs\xunit.extensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EncodingParserTest.cs" />
+    <Compile Include="HtmlCharsetMatcherTest.cs" />
+    <Compile Include="NewLineEraserTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StreamDepresserTest.cs" />
+    <Compile Include="HtmlConverterTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Framework\framework.csproj">
+      <Project>{79D07E49-1DBB-4C9E-863F-D53814AEE330}</Project>
+      <Name>framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\group.purchase\group.purchase.csproj">
+      <Project>{12039989-13D0-49AA-BE0A-FA3E9ED59399}</Project>
+      <Name>group.purchase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Persistance\persistance.csproj">
+      <Project>{15EA5FB7-C815-4442-9781-1C68C182DECE}</Project>
+      <Name>persistance</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Spider\spider.csproj">
+      <Project>{565CCA21-FF9C-4548-BF30-819A3DEBB1B0}</Project>
+      <Name>spider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\test.core\_test.core.csproj">
+      <Project>{AF60193E-23F2-45FB-BB00-C503AA3EBC08}</Project>
+      <Name>_test.core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

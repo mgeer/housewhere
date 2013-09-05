@@ -1,0 +1,10 @@
+F:\projects\houseatlas\spider\bin\Release\X3.Spider.dll
+F:\projects\houseatlas\spider\bin\Release\X3.Spider.pdb
+F:\projects\houseatlas\spider\obj\Release\spider.csprojResolveAssemblyReference.cache
+F:\projects\houseatlas\spider\obj\Release\X3.Spider.dll
+F:\projects\houseatlas\spider\obj\Release\X3.Spider.pdb
+D:\android\housewhere.spider\spider\bin\Release\X3.Spider.dll
+D:\android\housewhere.spider\spider\bin\Release\X3.Spider.pdb
+D:\android\housewhere.spider\spider\obj\Release\spider.csprojResolveAssemblyReference.cache
+D:\android\housewhere.spider\spider\obj\Release\X3.Spider.dll
+D:\android\housewhere.spider\spider\obj\Release\X3.Spider.pdb

@@ -1,0 +1,5 @@
+F:\projects\houseatlas\spider\bin\Debug\X3.Spider.dll
+F:\projects\houseatlas\spider\bin\Debug\X3.Spider.pdb
+F:\projects\houseatlas\spider\obj\Debug\spider.csprojResolveAssemblyReference.cache
+F:\projects\houseatlas\spider\obj\Debug\X3.Spider.dll
+F:\projects\houseatlas\spider\obj\Debug\X3.Spider.pdb
