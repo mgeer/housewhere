@@ -1,4 +1,4 @@
 housewhere
 ==========
 
-This is an application for people to choose a house which they can afford it base on the location that they can accept.
+A new way for people to find a house which they can afford with a location they can accept.
