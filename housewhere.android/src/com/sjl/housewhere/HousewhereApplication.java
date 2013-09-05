@@ -13,10 +13,6 @@ public class HousewhereApplication extends Application {
     BMapManager mBMapManager = null;
     private String strKey = "0De30d2ecd212da334f228d1c302ea5d";
 
-    public HousewhereApplication() {
-        System.out.println(HousewhereApplication.class + "constructed!");
-    }
-
     @Override
     public void onCreate() {
         super.onCreate();    //To change body of overridden methods use File | Settings | File Templates.
