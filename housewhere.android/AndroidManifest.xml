@@ -44,7 +44,7 @@
         <activity
                 android:name=".MainActivity"
                 android:configChanges="orientation"
-                android:label="BaiduMapSDKDemo"
+                android:label="HouseWhere"
                 android:screenOrientation="sensor" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

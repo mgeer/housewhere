@@ -1,51 +1,20 @@
 package com.sjl.housewhere;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
-import android.widget.FrameLayout;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.content.Intent;
-import android.widget.EditText;
-
 import com.baidu.mapapi.BMapManager;
-import com.baidu.mapapi.map.MKMapViewListener;
-import com.baidu.mapapi.map.MapController;
-import com.baidu.mapapi.map.MapPoi;
-import com.baidu.mapapi.map.MapView;
-import com.baidu.mapapi.map.PopupClickListener;
-import com.baidu.mapapi.map.PopupOverlay;
-import com.baidu.mapapi.map.RouteOverlay;
-import com.baidu.mapapi.map.TransitOverlay;
-import com.baidu.mapapi.search.MKRoute;
-import com.baidu.mapapi.search.MKSearch;
-import com.baidu.platform.comapi.basestruct.GeoPoint;
-import com.sjl.housewhere.R;
-import com.baidu.mapapi.utils.*;
-import com.baidu.mapapi.map.MKEvent;
-import com.baidu.mapapi.map.MKMapTouchListener;
-import com.baidu.mapapi.search.MKAddrInfo;
-import com.baidu.mapapi.search.MKBusLineResult;
-import com.baidu.mapapi.search.MKDrivingRouteResult;
-import com.baidu.mapapi.search.MKPlanNode;
-import com.baidu.mapapi.search.MKPoiResult;
-import com.baidu.mapapi.search.MKSearchListener;
-import com.baidu.mapapi.search.MKShareUrlResult;
-import com.baidu.mapapi.search.MKSuggestionResult;
-import com.baidu.mapapi.search.MKTransitRouteResult;
-import com.baidu.mapapi.search.MKWalkingRouteResult;
 import com.baidu.mapapi.map.*;
-
-import com.sjl.housewhere.database.*;
-import com.sjl.housewhere.model.*;
+import com.baidu.mapapi.search.*;
+import com.baidu.platform.comapi.basestruct.GeoPoint;
+import com.sjl.housewhere.model.Estate;
+import com.sjl.housewhere.model.EstateRepository;
 
 import java.util.List;
 
@@ -84,11 +53,12 @@ public class MainActivity<RoutePlanDemo> extends Activity {
     private PopupOverlay   pop  = null;//弹出泡泡图层，浏览节点时使用
     private TextView  popupText = null;//泡泡view
     private View viewCache = null;
+    private GraphicsOverlay previousOverlay;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mBMapMan=new BMapManager(getApplication());
+        mBMapMan = new BMapManager(getApplication());
         mBMapMan.init("A7fceec52518d6b3689b1536d5d0b5b4", null);
         //注意：请在试用setContentView前初始化BMapManager对象，否则会报错
         setContentView(R.layout.activity_main);
@@ -442,16 +412,36 @@ public class MainActivity<RoutePlanDemo> extends Activity {
     }
 
     private void drawEstates(double longitude, double latitude) {
-        LongLatScope longLatScope = getLongLatScope(new GeoPoint((int)(latitude*1E6), (int)(longitude*1E6)), distance);
+        GeoPoint centerPoint = new GeoPoint((int) (latitude * 1E6), (int) (longitude * 1E6));
+        LongLatScope longLatScope = getLongLatScope(centerPoint, distance);
         Log.i(this.getLocalClassName(), "=====long lat scope:" + longLatScope.toString());
         EstateRepository estateRepository = new EstateRepository(this.getApplication());
         List<Estate> estates = estateRepository.getEstatesByLongLatScope(longLatScope.getMaxLong(), longLatScope.getMinLong(),
                 longLatScope.getMaxLat(), longLatScope.getMinLat());
         Log.i("MyActivity", String.format("{%s} estates found!", estates.size()));
-        for(Estate estate : estates){
-            Log.i("MyActivity", "drawing estate:" + estate.toString());
-            drawEstate(estate);
+        drawEstatesOnMap(estates, centerPoint);
+    }
+
+    private void drawEstatesOnMap(List<Estate> estates, GeoPoint centerPoint) {
+        if (previousOverlay != null){
+            previousOverlay.removeAll();
         }
+        GraphicsOverlay palaceOverlay = new GraphicsOverlay(mMapView);
+        palaceOverlay.removeAll();
+        for(Estate estate : estates){
+            GeoPoint geoPoint = new GeoPoint((int) (estate.getLatitude() * 1E6), (int) (estate.getLongitude() * 1E6));
+            int pixelRadius = (int) Math.sqrt(estate.getArea() / Math.PI);
+            Graphic palaceGraphic = getGraphic(geoPoint, pixelRadius);
+            palaceOverlay.setData(palaceGraphic);
+        }
+        //将overlay添加到mapview中
+        mMapView.getOverlays().add(palaceOverlay);
+        //刷新地图使新添加的overlay生效
+        mMapView.refresh();
+        //移动，缩放地图到最视野
+        mMapView.getController().setZoom(16);
+        mMapView.getController().setCenter(centerPoint);
+        previousOverlay = palaceOverlay;
     }
 
     class LongLatScope{
@@ -506,11 +496,8 @@ public class MainActivity<RoutePlanDemo> extends Activity {
         return new LongLatScope(log - dlog, log + dlog, lat + dlat, lat - dlat);
     }
 
-    public void drawTransCircle(GeoPoint geoPoint, int pixelRadius)
-    {
+    private Graphic getGraphic(GeoPoint geoPoint, int pixelRadius) {
         Geometry palaceGeometry = new Geometry();
-        //GeoPoint palaceCenter = new GeoPoint((int)(39.924 * 1E6),(int)(116.403 * 1E6));
-        //palaceGeometry.setEnvelope(geoPoint1, geoPoint2);
         palaceGeometry.setCircle(geoPoint, pixelRadius);
 
         Symbol palaceSymbol = new Symbol();//创建样式
@@ -521,19 +508,7 @@ public class MainActivity<RoutePlanDemo> extends Activity {
         palaceColor.alpha = 200;//设置颜色的alpha值
         palaceSymbol.setSurface(palaceColor,1,3);//设置样式参数，颜色：palaceColor是否填充距形：是线
 
-        Graphic palaceGraphic = new Graphic(palaceGeometry, palaceSymbol);
-        GraphicsOverlay palaceOverlay = new GraphicsOverlay(mMapView);
-        long palaceId = palaceOverlay.setData(palaceGraphic);
-        //将overlay添加到mapview中
-        mMapView.getOverlays().add(palaceOverlay);
-        //刷新地图使新添加的overlay生效
-        mMapView.refresh();
-        //移动，缩放地图到最视野
-        mMapView.getController().setZoom(16);
-        mMapView.getController().setCenter(geoPoint);
+        return new Graphic(palaceGeometry, palaceSymbol);
     }
 
-    private void drawEstate(Estate estate) {
-        drawTransCircle(new GeoPoint((int)(estate.getLatitude()*1E6), (int)(estate.getLongitude()*1E6)), (int)Math.sqrt(estate.getArea() / Math.PI));
-    }
 }
