@@ -27,7 +27,6 @@ public class MyActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-
 //        mBMapMan=new BMapManager(getApplication());
 //        mBMapMan.init("A7fceec52518d6b3689b1536d5d0b5b4", null);
 //        setContentView(R.layout.main);
