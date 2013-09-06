@@ -38,6 +38,11 @@ public class MyActivity extends Activity {
         mMapController.setZoom(16);
 
         drawEstates(centerLongitude, centerLatitude);
+
+        HousewhereApplication application = (HousewhereApplication)getApplication();
+        TransitRoute transmitRoute = new TransitRoute(this);
+        transmitRoute.search("西直门", "大山子南里");
+
     }
 
     private void drawEstates(double longitude, double latitude) {
