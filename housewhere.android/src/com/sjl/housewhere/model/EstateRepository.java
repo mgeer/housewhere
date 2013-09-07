@@ -27,7 +27,8 @@ public class EstateRepository {
     private Estate createEstate(Cursor cursor) {
         String name = cursor.getString(cursor.getColumnIndex("name"));
         double price = cursor.getDouble(cursor.getColumnIndex("price"));
-        int area = cursor.getInt(cursor.getColumnIndex("area"));
+        int rawArea = cursor.getInt(cursor.getColumnIndex("area"));
+        int area = rawArea > 1500000 ? 1500000 : rawArea;
         double longitude = cursor.getDouble(cursor.getColumnIndex("longitude"));
         double latitude = cursor.getDouble(cursor.getColumnIndex("latitude"));
         return new Estate(name, price, area, longitude, latitude);

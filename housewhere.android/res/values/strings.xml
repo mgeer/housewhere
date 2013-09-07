@@ -6,4 +6,9 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="estates_in_beijing">Estates in Beijing</string>
 
+    <string name="action_settings">Settings</string>
+    <string name="main_ui">爱找房</string>
+    <string name="city_view">全城找房</string>
+    <string name="bridge_us">鹊桥相会</string>
+
 </resources>
