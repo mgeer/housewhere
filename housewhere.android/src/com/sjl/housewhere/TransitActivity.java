@@ -20,7 +20,7 @@ import java.util.List;
 
 import static java.lang.Math.*;
 
-public class MainActivity<RoutePlanDemo> extends Activity {
+public class TransitActivity<RoutePlanDemo> extends Activity {
 
     private final int distance = 500;
     //  private double centerLongitude = 116.404;
@@ -117,12 +117,12 @@ public class MainActivity<RoutePlanDemo> extends Activity {
                 }
                 // 错误号可参考MKEvent中的定义
                 if (error != 0 || res == null) {
-                    Toast.makeText(MainActivity.this, "抱歉，未找到结果", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(TransitActivity.this, "抱歉，未找到结果", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 searchType = 0;
-                routeOverlay = new RouteOverlay(MainActivity.this, mMapView);
+                routeOverlay = new RouteOverlay(TransitActivity.this, mMapView);
                 // 此处仅展示一个方案作为示例
                 routeOverlay.setData(res.getPlan(0).getRoute(0));
                 //清除其他图层
@@ -155,12 +155,12 @@ public class MainActivity<RoutePlanDemo> extends Activity {
                     return;
                 }
                 if (error != 0 || res == null) {
-                    Toast.makeText(MainActivity.this, "抱歉，未找到结果", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(TransitActivity.this, "抱歉，未找到结果", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 searchType = 1;
-                transitOverlay = new TransitOverlay (MainActivity.this, mMapView);
+                transitOverlay = new TransitOverlay (TransitActivity.this, mMapView);
                 // 此处仅展示一个方案作为示例
                 transitOverlay.setData(res.getPlan(0));
                 //清除其他图层
@@ -191,12 +191,12 @@ public class MainActivity<RoutePlanDemo> extends Activity {
                     return;
                 }
                 if (error != 0 || res == null) {
-                    Toast.makeText(MainActivity.this, "抱歉，未找到结果", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(TransitActivity.this, "抱歉，未找到结果", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 searchType = 2;
-                routeOverlay = new RouteOverlay(MainActivity.this, mMapView);
+                routeOverlay = new RouteOverlay(TransitActivity.this, mMapView);
                 // 此处仅展示一个方案作为示例
                 routeOverlay.setData(res.getPlan(0).getRoute(0));
                 //清除其他图层
@@ -385,33 +385,6 @@ public class MainActivity<RoutePlanDemo> extends Activity {
         return true;
     }
 
-    @Override
-    protected void onDestroy(){
-        mMapView.destroy();
-//        if(mBMapMan!=null){
-//            mBMapMan.destroy();
-//            mBMapMan=null;
-//        }
-        super.onDestroy();
-    }
-
-    @Override
-    protected void onPause(){
-        mMapView.onPause();
-//        if(mBMapMan!=null){
-//            mBMapMan.stop();
-//        }
-        super.onPause();
-    }
-    @Override
-    protected void onResume(){
-        mMapView.onResume();
-//        if(mBMapMan!=null){
-//            mBMapMan.start();
-//        }
-        super.onResume();
-    }
-
     private void drawEstates(double longitude, double latitude) {
         GeoPoint centerPoint = new GeoPoint((int) (latitude * 1E6), (int) (longitude * 1E6));
         LongLatScope longLatScope = getLongLatScope(centerPoint, distance);
@@ -439,10 +412,10 @@ public class MainActivity<RoutePlanDemo> extends Activity {
         mMapView.getOverlays().add(palaceOverlay);
         //刷新地图使新添加的overlay生效
         //移动，缩放地图到最视野
-        mMapView.getController().setZoom(16);
-        mMapView.refresh();
         mMapView.getController().setCenter(centerPoint);
         previousOverlay = palaceOverlay;
+        mMapView.getController().setZoom(16);
+        mMapView.refresh();
     }
 
     class LongLatScope{
@@ -512,4 +485,20 @@ public class MainActivity<RoutePlanDemo> extends Activity {
         return new Graphic(palaceGeometry, palaceSymbol);
     }
 
+    @Override
+    protected void onDestroy(){
+        mMapView.destroy();
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onPause(){
+        mMapView.onPause();
+        super.onPause();
+    }
+    @Override
+    protected void onResume(){
+        mMapView.onResume();
+        super.onResume();
+    }
 }

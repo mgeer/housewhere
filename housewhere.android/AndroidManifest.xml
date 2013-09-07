@@ -59,7 +59,7 @@
         </activity>
 
         <activity
-                android:name=".MainActivity"
+                android:name=".TransitActivity"
                 android:label="@string/bridge_us" >
         </activity>
     </application>

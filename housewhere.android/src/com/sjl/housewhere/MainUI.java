@@ -34,20 +34,17 @@ public class MainUI extends Activity {
     void ShowChildView(View v) {
         if (mBtnCityView.equals(v)) {
             Intent intent = new Intent();
-            intent.putExtra("textintent", "��ӭ���뵽�ڶ���activity");
             intent.setClass(MainUI.this, EstatesInCityActivity.class);
             this.startActivity(intent);
         } else if (mBtnBridgeUs.equals(v)) {
             Intent intent = new Intent();
-            intent.putExtra("textintent", "��ӭ���뵽�ڶ���activity");
-            intent.setClass(MainUI.this, MainActivity.class);
+            intent.setClass(MainUI.this, TransitActivity.class);
             this.startActivity(intent);
         }
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }

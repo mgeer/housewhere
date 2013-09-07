@@ -50,7 +50,7 @@
     <file path="/HousewhereApplication.java" changelist="d75dcd9b-1e08-43b5-be55-51e6cd43be45" time="1378439568777" ignored="false" />
     <file path="/Spike.java" changelist="d75dcd9b-1e08-43b5-be55-51e6cd43be45" time="1378360416239" ignored="false" />
     <file path="$PROJECT_DIR$/../../android-sdks/platforms/android-16/data/res/values-et/donottranslate-cldr.xml" changelist="d75dcd9b-1e08-43b5-be55-51e6cd43be45" time="1378362189490" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/com/sjl/housewhere/R.java" changelist="d75dcd9b-1e08-43b5-be55-51e6cd43be45" time="1378548915236" ignored="false" />
+    <file path="$PROJECT_DIR$/gen/com/sjl/housewhere/R.java" changelist="d75dcd9b-1e08-43b5-be55-51e6cd43be45" time="1378557847746" ignored="false" />
     <file path="$PROJECT_DIR$/gen/com/sjl/housewhere/BuildConfig.java" changelist="d75dcd9b-1e08-43b5-be55-51e6cd43be45" time="1378455618558" ignored="false" />
     <file path="$PROJECT_DIR$/../housewhere.gen.db/test/com/sjl/estatesinsqllite/EstatesInDBTest.java" changelist="d75dcd9b-1e08-43b5-be55-51e6cd43be45" time="1378382502495" ignored="false" />
     <file path="/EstatesInDBTest.java" changelist="d75dcd9b-1e08-43b5-be55-51e6cd43be45" time="1378382458607" ignored="false" />
@@ -59,7 +59,7 @@
     <file path="/MainActivity.java" changelist="d75dcd9b-1e08-43b5-be55-51e6cd43be45" time="1378552397738" ignored="false" />
     <file path="/estates_in_city.xml" changelist="d75dcd9b-1e08-43b5-be55-51e6cd43be45" time="1378539666810" ignored="false" />
     <file path="/HouseWhereApplication.java" changelist="d75dcd9b-1e08-43b5-be55-51e6cd43be45" time="1378539863306" ignored="false" />
-    <file path="/EstatesInCityActivity.java" changelist="d75dcd9b-1e08-43b5-be55-51e6cd43be45" time="1378553470597" ignored="false" />
+    <file path="/EstatesInCityActivity.java" changelist="d75dcd9b-1e08-43b5-be55-51e6cd43be45" time="1378556352577" ignored="false" />
     <file path="/strings.xml" changelist="d75dcd9b-1e08-43b5-be55-51e6cd43be45" time="1378540242812" ignored="false" />
     <file path="/MainUI.java" changelist="d75dcd9b-1e08-43b5-be55-51e6cd43be45" time="1378549410981" ignored="false" />
     <file path="D:/multiActivity/res/menu/main.xml" changelist="d75dcd9b-1e08-43b5-be55-51e6cd43be45" time="1378548720906" ignored="false" />
@@ -156,13 +156,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/sjl/housewhere/MainActivity.java">
+      <file leaf-file-name="TransitActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/sjl/housewhere/TransitActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="387" column="0" selection-start="14996" selection-end="15564" vertical-scroll-proportion="0.0">
+            <state line="315" column="13" selection-start="12185" selection-end="12185" vertical-scroll-proportion="-63.785713">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BMapUtil.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/sjl/housewhere/BMapUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="32" selection-start="200" selection-end="200" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -178,10 +187,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EstatesInCityActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="EstatesInCityActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/sjl/housewhere/EstatesInCityActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="36" selection-start="935" selection-end="935" vertical-scroll-proportion="0.74766356">
+            <state line="135" column="3" selection-start="5067" selection-end="5380" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -189,19 +198,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <file leaf-file-name="MainUI.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/sjl/housewhere/MainUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="45" selection-start="2193" selection-end="2193" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="29" column="55" selection-start="842" selection-end="842" vertical-scroll-proportion="0.6094183">
+              <folding>
+                <element signature="e#662#784#0" expanded="true" />
+                <element signature="e#773#774#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainUI.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/sjl/housewhere/MainUI.java">
+      <file leaf-file-name="View.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/../../android-sdks/platforms/android-7/android.jar!/android/view/View.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="5" selection-start="904" selection-end="904" vertical-scroll-proportion="0.0">
+            <state line="88" column="16" selection-start="4835" selection-end="4835" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -216,15 +228,6 @@
           </provider>
           <provider editor-type-id="android-designer">
             <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/menu/main.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="37" selection-start="195" selection-end="195" vertical-scroll-proportion="-4.0">
-              <folding />
-            </state>
           </provider>
         </entry>
       </file>
@@ -271,7 +274,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/sjl/housewhere/TransmitRoute.java" />
         <option value="$PROJECT_DIR$/src/com/sjl/housewhere/TransitRoute.java" />
         <option value="$PROJECT_DIR$/src/com/sjl/housewhere/MainActivity2.java" />
         <option value="$PROJECT_DIR$/res/layout/estates_in_city.xml" />
@@ -283,10 +285,11 @@
         <option value="$PROJECT_DIR$/src/com/sjl/housewhere/MainUIbak.java" />
         <option value="$PROJECT_DIR$/src/com/sjl/housewhere/MainUI2.java" />
         <option value="$PROJECT_DIR$/src/com/sjl/housewhere/test.java" />
-        <option value="$PROJECT_DIR$/src/com/sjl/housewhere/MainUI.java" />
         <option value="$PROJECT_DIR$/src/com/sjl/housewhere/model/EstateRepository.java" />
-        <option value="$PROJECT_DIR$/src/com/sjl/housewhere/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/com/sjl/housewhere/EstatesInCityActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/sjl/housewhere/MainActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/sjl/housewhere/TransitActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/sjl/housewhere/MainUI.java" />
       </list>
     </option>
   </component>
@@ -334,6 +337,76 @@
               <option name="myItemId" value="External Libraries" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Android 2.1 Platform &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="housewhere" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Android 2.1 Platform &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="housewhere" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Android 2.1 Platform &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="housewhere" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Android 2.1 Platform &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -360,50 +433,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="housewhere" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="housewhere" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="housewhere.android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="housewhere" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="housewhere" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="housewhere.android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="housewhere" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -814,15 +843,15 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24634147" sideWeight="0.27317074" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32357723" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32357723" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36747968" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36747968" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947975" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2504065" sideWeight="0.6325203" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2504065" sideWeight="0.6764228" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32520324" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.6178862" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -897,22 +926,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/sjl/housewhere/HouseWhereApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="313" selection-end="313" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="813" column="27" selection-start="25909" selection-end="25909" vertical-scroll-proportion="0.6892857">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/src/com/sjl/housewhere/EstateRepositoryTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="94" column="9" selection-start="4733" selection-end="4733" vertical-scroll-proportion="0.0">
@@ -987,24 +1000,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sjl/housewhere/model/EstateRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="23" selection-start="1017" selection-end="1017" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#2179#2187#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sjl/housewhere/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="387" column="0" selection-start="14996" selection-end="15564" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main_ui.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="33" selection-start="756" selection-end="756" vertical-scroll-proportion="-1.8888888">
@@ -1015,18 +1010,53 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sjl/housewhere/MainUI.java">
+    <entry file="file://$PROJECT_DIR$/src/com/sjl/housewhere/model/EstateRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="5" selection-start="904" selection-end="904" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="30" column="23" selection-start="1017" selection-end="1017" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#2179#2187#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sjl/housewhere/EstatesInCityActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="36" selection-start="935" selection-end="935" vertical-scroll-proportion="0.74766356">
+        <state line="135" column="3" selection-start="5067" selection-end="5380" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sjl/housewhere/BMapUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="32" selection-start="200" selection-end="200" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sjl/housewhere/TransitActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="315" column="13" selection-start="12185" selection-end="12185" vertical-scroll-proportion="-63.785713">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../android-sdks/platforms/android-7/android.jar!/android/view/View.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="16" selection-start="4835" selection-end="4835" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sjl/housewhere/MainUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="55" selection-start="842" selection-end="842" vertical-scroll-proportion="0.6094183">
+          <folding>
+            <element signature="e#662#784#0" expanded="true" />
+            <element signature="e#773#774#0" expanded="true" />
           </folding>
         </state>
       </provider>
