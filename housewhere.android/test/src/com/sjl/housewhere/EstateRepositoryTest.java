@@ -2,6 +2,7 @@ package com.sjl.housewhere;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.test.AndroidTestCase;
+import android.util.Log;
 import com.sjl.housewhere.database.AssetsDatabaseManager;
 import com.sjl.housewhere.model.Estate;
 import com.sjl.housewhere.model.EstateRepository;
@@ -27,6 +28,7 @@ public class EstateRepositoryTest extends AndroidTestCase {
                 {"天通西苑三区","19820","490000","116.415902","40.082007"},
                 {"荣丰2008","48801","114000","116.341507","39.899633"},
                 {"天通苑中苑","22043","480000","115.893421","28.665621"},
+                {"经纬度为0的小区","22043","480000", "0","0"},
         };
         for(String[] estate : estatesForFixture){
             String sql = "INSERT INTO estates (name, price, area, longitude, latitude) " +
@@ -77,5 +79,19 @@ public class EstateRepositoryTest extends AndroidTestCase {
         Assert.assertEquals(2, estates.size());
         Assert.assertEquals("天通西苑三区", estates.get(0).getName());
         Assert.assertEquals("荣丰2008", estates.get(1).getName());
+    }
+
+    public void testGetAllEstates(){
+        EstateRepository estateRepository = new EstateRepository(this.getContext(), testDatabaseFile);
+        List<Estate> estates = estateRepository.getAllEstates();
+        assertEquals(5, estates.size());
+    }
+
+    public void testEstatesArea(){
+        EstateRepository estateRepository = new EstateRepository(this.getContext());
+        List<Estate> estates = estateRepository.getEstatesWhoesAreaMoreThan1500000();
+        for(Estate estate : estates){
+            Log.i("debug area", estate.getName());
+        }
     }
 }

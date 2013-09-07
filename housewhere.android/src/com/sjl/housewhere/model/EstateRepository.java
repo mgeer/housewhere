@@ -3,7 +3,6 @@ package com.sjl.housewhere.model;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 import com.sjl.housewhere.database.AssetsDatabaseManager;
 
 import java.util.ArrayList;
@@ -39,18 +38,33 @@ public class EstateRepository {
     }
 
     public List<Estate> getEstatesByLongLatScope(double maxLong, double minLong, double maxLat, double minLat) {
+
+        String sql = "SELECT * FROM estates where longitude <= ? AND longitude >= ? AND latitude <= ? AND latitude >= ?";
+        String[] selectionArgs = {
+                Double.toString(maxLong), Double.toString(minLong),
+                Double.toString(maxLat), Double.toString(minLat),
+        };
+        return getEstatesBySQL(sql, selectionArgs);
+    }
+
+    public List<Estate> getAllEstates() {
+        String sql = "SELECT * FROM estates where longitude > 0 AND longitude > 0";
+        return getEstatesBySQL(sql, null);
+    }
+
+    private List<Estate> getEstatesBySQL(String sql, String[] selectionArgs) {
         ArrayList<Estate> estates = new ArrayList<Estate>();
         SQLiteDatabase database = getDatabase();
-        Cursor cursor = database.rawQuery(
-                "SELECT * FROM estates where longitude <= ? AND longitude >= ? AND latitude <= ? AND latitude >= ?",
-                new String[]{
-                        Double.toString(maxLong), Double.toString(minLong),
-                        Double.toString(maxLat), Double.toString(minLat),
-                });
+        Cursor cursor = database.rawQuery(sql, selectionArgs);
         while (cursor.moveToNext()){
             Estate estate = createEstate(cursor);
             estates.add(estate);
         }
         return estates;
+    }
+
+    public List<Estate> getEstatesWhoesAreaMoreThan1500000() {
+        String sql = "SELECT * FROM estates where area > 1500000";
+        return getEstatesBySQL(sql, null);
     }
 }
