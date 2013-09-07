@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style type="text/css">
+html{height:100%}
+body{height:100%;margin:0px;padding:0px}
+#container{width:75%;height:650px;border:1px solid gray;float:left;}
+#right{width:24%;height:650px;float:left;overflow-y:auto;}
+img.show{width:300px;height:200px;}
+</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
+<script type="text/javascript" src="GeoUtils.js"></script>
+<script type="text/javascript" src="heatmap.js"></script>
+<script type="text/javascript" src="heatmap-bmaps.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<div id="right">
+</div>
+<br />
+<script type="text/javascript">
+
+
+
+function HeatmapOverlay(map,cfg){
+this._map=map;
+this.conf = cfg;
+this.heatmap=null;
+this.latlngs=[];
+this.bounds=null;
+}
+HeatmapOverlay.prototype = new BMap.Overlay();
+HeatmapOverlay.prototype.initialize = function(){
+	var map=this._map;
+	var el = document.createElement("div");
+	el.style.position = "absolute";
+	el.style.top = 0;
+	el.style.left = 0;
+	el.style.border = 0;
+	el.style.width = this._map.getSize().width+"px";
+	el.style.height = this._map.getSize().height+"px";
+	this.conf.element = el;
+	map.getPanes().markerPane.appendChild(el);
+	this.heatmap=h337.create(this.conf);
+	this._div = el;
+	return el;
+}
+HeatmapOverlay.prototype.draw = function(){
+	var currentBounds = this._map.getBounds();
+	if (currentBounds.equals(this.bounds)) {
+	return;
+	}
+this.bounds = currentBounds;
+var ne = this._map.pointToOverlayPixel(currentBounds.getNorthEast()),
+sw = this._map.pointToOverlayPixel(currentBounds.getSouthWest()),
+topY = ne.y,
+leftX = sw.x,
+h = sw.y - ne.y,
+w = ne.x - sw.x;
+this.conf.element.style.left = leftX + 'px';
+this.conf.element.style.top = topY + 'px';
+this.conf.element.style.width = w + 'px';
+this.conf.element.style.height = h + 'px';
+this.heatmap.store.get("heatmap").resize();
+if(this.latlngs.length > 0){
+this.heatmap.clear();
+var len = this.latlngs.length;
+d = {
+max: this.heatmap.store.max,
+data: []
+};
+while(len--){
+var latlng = this.latlngs[len].latlng;
+if(!BMapLib.GeoUtils.isPointInRect(latlng, currentBounds)){continue;}
+var divPixel = this._map.pointToOverlayPixel(latlng),
+screenPixel = new BMap.Pixel(divPixel.x - leftX, divPixel.y - topY);
+var roundedPoint = this.pixelTransform(screenPixel);
+d.data.push({
+x: roundedPoint.x,
+y: roundedPoint.y,
+count: this.latlngs[len].c
+});
+}
+this.heatmap.store.setDataSet(d);
+}
+}
+HeatmapOverlay.prototype.pixelTransform = function(p){
+var w = this.heatmap.get("width"),
+h = this.heatmap.get("height");
+while(p.x < 0){
+p.x+=w;
+}
+while(p.x > w){
+p.x-=w;
+}
+while(p.y < 0){
+p.y+=h;
+}
+while(p.y > h){
+p.y-=h;
+}
+p.x = (p.x >> 0);
+p.y = (p.y >> 0);
+return p;
+}
+HeatmapOverlay.prototype.setDataSet = function(data){
+var mapdata = {
+max: data.max,
+data: []
+};
+var d = data.data,
+dlen = d.length;
+this.latlngs = [];
+while(dlen--){
+var latlng = new BMap.Point(d[dlen].lat, d[dlen].lng);
+this.latlngs.push({latlng: latlng, c: d[dlen].count});
+var point = this.pixelTransform(this._map.pointToOverlayPixel(latlng));
+mapdata.data.push({x: point.x, y: point.y, count: d[dlen].count});
+}
+this.heatmap.clear();
+this.heatmap.store.setDataSet(mapdata);
+}
+HeatmapOverlay.prototype.addDataPoint = function(lat, lng, count){
+var latlng = new BMap.Point(lat, lng),
+point = this.pixelTransform(this._map.pointToOverlayPixel(latlng));
+this.heatmap.store.addDataPoint(point.x, point.y, count);
+this.latlngs.push({ latlng: latlng, c: count });
+}
+HeatmapOverlay.prototype.toggle = function(){
+this.heatmap.toggleDisplay();
+}
+
+
+
+var map = new BMap.Map("container");
+map.centerAndZoom(new BMap.Point(104.072284,30.663333), 12);
+map.addControl(new BMap.NavigationControl({type: BMAP_NAVIGATION_CONTROL_SMALL}));
+map.enableScrollWheelZoom();
+map.disableDoubleClickZoom();
+var heatmap = new HeatmapOverlay(map, {"radius":25, "visible":true, "opacity":60});
+var testData={
+max: 100,
+data: [{lat: 104.053909, lng:30.661492, count: 20},
+{lat: 104.064258, lng:30.671432, count: 10},
+{lat: 104.082943, lng:30.678887, count: 30},
+{lat: 104.047873, lng:30.679632, count: 40},
+{lat: 104.157035, lng:30.818736, count: 50},
+{lat: 104.082943, lng:30.678887, count: 60},
+{lat: 104.007557, lng:30.736825, count: 70},
+{lat: 104.082943, lng:30.606616, count: 80},
+{lat: 103.991459, lng:30.678887, count: 100},
+{lat: 104.147261, lng:30.639931, count: 5},
+{lat: 104.100693, lng:30.706028, count: 6},
+{lat: 104.153585, lng:30.589706, count: 7},
+{lat: 103.912121, lng:30.595177, count: 8},
+{lat: 103.924769, lng:30.602638, count: 10},
+{lat: 103.901198, lng:30.603135, count: 56},
+{lat: 104.230624, lng:30.56135, count: 78},
+{lat: 104.221425, lng:30.551896, count: 10},
+{lat: 104.231199, lng:30.598162, count: 20},
+{lat: 103.954665, lng:30.772577, count: 11},
+{lat: 104.083446, lng:30.720931, count: 5},
+{lat: 103.986285, lng:30.717454, count: 8},
+{lat: 103.999508, lng:30.624518, count: 30},
+{lat: 104.109317, lng:30.642417, count: 40},
+{lat: 104.01963, lng:30.698079, count: 3},
+{lat: 104.181756, lng:30.641422, count: 5},
+{lat: 104.163934, lng:30.592691, count: 7},
+{lat: 104.024804, lng:30.745268, count: 8},
+{lat: 103.98571, lng:30.718944, count: 14},
+{lat: 104.046651, lng:30.739805, count: 17},
+{lat: 103.854054, lng:30.664288, count: 18},
+{lat: 103.993184, lng:30.630485, count: 30},
+{lat: 104.245572, lng:30.723415, count: 40},
+{lat: 103.896598, lng:30.735335, count: 10},
+{lat: 104.302489, lng:30.634959, count: 50},
+{lat: 104.178307, lng:30.537962, count: 7},
+{lat: 104.178307, lng:30.537962, count: 44},
+{lat: 104.013881, lng:30.755199, count: 32},
+{lat: 104.249021, lng:30.638937, count: 10},
+{lat: 104.039177, lng:30.682676, count: 15},
+{lat: 104.093219, lng:30.679694, count: 18},
+{lat: 104.035153, lng:30.6623, count: 80},
+{lat: 104.08632, lng:30.689633, count: 100},
+{lat: 104.0524, lng:30.647388, count: 30},
+{lat: 104.084596, lng:30.654844, count: 50},
+{lat: 104.035153, lng:30.632971, count: 10},
+{lat: 104.129439, lng:30.648382, count: 60},
+{lat: 104.057, lng:30.726892, count: 80},
+{lat: 104.163934, lng:30.632971, count: 40},
+{lat: 104.028254, lng:30.758675, count: 10},
+{lat: 104.151286, lng:30.609103, count: 60},
+{lat: 103.963863, lng:30.668761, count: 80},
+{lat: 104.072522, lng:30.658821, count: 90},
+{lat: 104.004682, lng:30.75371, count: 50},
+{lat: 103.970187, lng:30.718944, count: 40},
+{lat: 103.975937, lng:30.67224, count: 30},
+{lat: 103.966163, lng:30.661803, count: 20},
+{lat: 103.965013, lng:30.728382, count: 70},
+{lat: 103.970762, lng:30.750234, count: 40},
+{lat: 103.969612, lng:30.694601, count: 80},
+{lat: 103.990884, lng:30.618551, count: 40},
+{lat: 103.969612, lng:30.662797, count: 30},
+{lat: 104.069073, lng:30.747751, count: 90},
+{lat: 104.119665, lng:30.697086, count: 50},
+{lat: 104.135763, lng:30.664288, count: 40},
+{lat: 104.066198, lng:30.751227, count: 30},
+{lat:104.057575, lng:30.711493, count: 20},
+{lat: 104.10874, lng:230.709009, count: 70},
+{lat: 104.034003, lng:30.707022, count: 40},
+{lat: 104.067923, lng:30.718448, count: 80},
+{lat: 104.135188, lng:30.651862, count: 40},
+{lat: 104.132888, lng:30.69013, count: 30},
+{lat: 104.067923, lng:30.636451, count: 10}]
+};
+map.addOverlay(heatmap);
+heatmap.setDataSet(testData);
+</script>
+</body>
+</html>
+

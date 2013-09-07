@@ -437,9 +437,9 @@ public class MainActivity<RoutePlanDemo> extends Activity {
         //将overlay添加到mapview中
         mMapView.getOverlays().add(palaceOverlay);
         //刷新地图使新添加的overlay生效
-        mMapView.refresh();
         //移动，缩放地图到最视野
         mMapView.getController().setZoom(16);
+        mMapView.refresh();
         mMapView.getController().setCenter(centerPoint);
         previousOverlay = palaceOverlay;
     }
