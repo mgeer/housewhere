@@ -388,26 +388,27 @@ public class MainActivity<RoutePlanDemo> extends Activity {
     @Override
     protected void onDestroy(){
         mMapView.destroy();
-        if(mBMapMan!=null){
-            mBMapMan.destroy();
-            mBMapMan=null;
-        }
+//        if(mBMapMan!=null){
+//            mBMapMan.destroy();
+//            mBMapMan=null;
+//        }
         super.onDestroy();
     }
+
     @Override
     protected void onPause(){
         mMapView.onPause();
-        if(mBMapMan!=null){
-            mBMapMan.stop();
-        }
+//        if(mBMapMan!=null){
+//            mBMapMan.stop();
+//        }
         super.onPause();
     }
     @Override
     protected void onResume(){
         mMapView.onResume();
-        if(mBMapMan!=null){
-            mBMapMan.start();
-        }
+//        if(mBMapMan!=null){
+//            mBMapMan.start();
+//        }
         super.onResume();
     }
 

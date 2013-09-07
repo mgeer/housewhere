@@ -23,7 +23,30 @@ public class EstatesInCityActivity extends Activity {
         setContentView(R.layout.estates_in_city);
 
         showMap();
+//        addDarkBackround();
         drawEstates(targetPrice);
+    }
+
+    private void addDarkBackround() {
+        GraphicsOverlay overlay = new GraphicsOverlay(mMapView);
+        Geometry palaceGeometry = new Geometry();
+        int latitudeSpan = 1;
+        int longitudeSpan = 1;
+        int upLeftLon = (int)(centerLongitude * 1E6 - longitudeSpan / 2);
+        int upLeftLat = (int)(centerLatitude * 1E6 + latitudeSpan / 2);
+        int downRightLon = (int)(centerLongitude * 1E6 + longitudeSpan / 2);
+        int downRightLat = (int)(centerLatitude * 1E6 - longitudeSpan / 2);
+        GeoPoint upLeftPoint = new GeoPoint(upLeftLat, upLeftLon);
+        GeoPoint downRightPoint = new GeoPoint(downRightLat, downRightLon);
+        palaceGeometry.setEnvelope(upLeftPoint, downRightPoint);
+        Symbol symbol = new Symbol();
+        Symbol.Color color = symbol.new Color();
+        color.red = 0x00;
+        color.green = 0x00;
+        color.blue = 0x00;
+        color.alpha = 200;
+        Graphic graphic = new Graphic(palaceGeometry, symbol);
+        overlay.setData(graphic);
     }
 
     private void showMap() {
@@ -47,6 +70,7 @@ public class EstatesInCityActivity extends Activity {
         }
 
         GeoPoint centerPoint = new GeoPoint((int)(centerLatitude * 1E6), (int)(centerLongitude * 1E6));
+
         refreshOverlay(estatesOverlay, centerPoint);
     }
 
@@ -83,35 +107,7 @@ public class EstatesInCityActivity extends Activity {
             color.green = 0x66;
             color.blue = 0xFF;
         }
-
-
-
-
-//        if(estate.getPrice() < 20000)
-//        {
-//            color.red = 0x000;
-//            color.green = 0x66;
-//            color.blue = 0xFF;
-//        }
-//        else if(estate.getPrice() < 30000)
-//        {
-//            color.red = 0x33;
-//            color.green = 0xFF;
-//            color.blue = 0x00;
-//        }
-//        else if(estate.getPrice() < 50000)
-//        {
-//            color.red = 0xFF;
-//            color.green = 0x99;
-//            color.blue = 0x00;
-//        }
-//        else
-//        {
-//            color.red = 0xFF;
-//            color.green = 0x00;
-//            color.blue = 0x00;
-//        }
-        color.alpha = 200;
+        color.alpha = 240;
         symbol.setSurface(color, 1, 3);
         return symbol;
     }
@@ -135,5 +131,32 @@ public class EstatesInCityActivity extends Activity {
         mMapView.refresh();
         mMapView.getController().setZoom(12);
         mMapView.getController().setCenter(centerPoint);
+    }
+
+    @Override
+    protected void onDestroy(){
+        mMapView.destroy();
+//        if(mBMapMan!=null){
+//            mBMapMan.destroy();
+//            mBMapMan=null;
+//        }
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onPause(){
+        mMapView.onPause();
+//        if(mBMapMan!=null){
+//            mBMapMan.stop();
+//        }
+        super.onPause();
+    }
+    @Override
+    protected void onResume(){
+        mMapView.onResume();
+//        if(mBMapMan!=null){
+//            mBMapMan.start();
+//        }
+        super.onResume();
     }
 }
